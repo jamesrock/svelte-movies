@@ -9,7 +9,6 @@
 </script>
 
 <!-- markup (zero or more items) goes here -->
-
 <div class="genres">
 	{#each genres as genre}
 		<a href={`/genre/${genre.id}`}>{genre.name}</a>

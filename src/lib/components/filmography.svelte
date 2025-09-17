@@ -17,7 +17,7 @@
 
 <!-- markup (zero or more items) goes here -->
 {#await fetcher}
-	<p>waiting</p>
+	<p></p>
 {:then films}
 	<div class="cast-and-crew">
 		<Films films={dedupe(films.cast, 'cast')} name="Cast" credits="cast" />

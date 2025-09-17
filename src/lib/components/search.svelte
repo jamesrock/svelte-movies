@@ -5,7 +5,7 @@
 
 <script>
 	// instance-level logic goes here
-	import { api, genres, media_type_name, media_type_profile_path } from "$lib/api";
+	import { api, genres, addProp, sortByProp, filterByMatch, media_type_name, media_type_profile_path } from "$lib/api";
 	import Poster from "./poster.svelte";
 	// const [list, setList] = useState([]);
   // const [query, setQuery] = useState('');

@@ -10,9 +10,10 @@
   const { id } = data;
 	const fetcher = getPerson(id);
 </script>
+
 <main>
   {#await fetcher}
-	  <p>waiting</p>
+	  <p></p>
   {:then person}
     <div class="person">
       <h1>{person.name}</h1>

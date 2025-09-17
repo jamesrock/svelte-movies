@@ -24,7 +24,6 @@
 </script>
 
 <!-- markup (zero or more items) goes here -->
-
 <div class="films">
 	<div class="films-head">
 		<h1>{name}</h1>

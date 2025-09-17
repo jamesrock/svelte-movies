@@ -16,9 +16,8 @@
 </script>
 
 <!-- markup (zero or more items) goes here -->
-
 {#await fetcher}
-	<p>waiting</p>
+	<p></p>
 {:then films} 
 	<Films films={films} name="Now Playing" link="/playing" />
 {:catch error} 

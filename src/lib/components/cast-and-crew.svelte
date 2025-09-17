@@ -16,9 +16,8 @@
 </script>
 
 <!-- markup (zero or more items) goes here -->
-
 {#await fetcher}
-	<p>waiting</p>
+	<p></p>
 {:then people}
 	<div class="cast-and-crew">
 		<People people={dedupe(people.cast, 'cast')} name="Cast" type="cast" />

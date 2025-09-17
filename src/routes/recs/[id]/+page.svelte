@@ -12,7 +12,7 @@
 
 <main>
 	{#await fetcher}
-		<p>waiting</p>
+		<p></p>
 	{:then film}
 		<FilmGrid id={id} type="recs" name="Recommendations" sub={`based on ${film.title}`} />
 	{:catch error} 

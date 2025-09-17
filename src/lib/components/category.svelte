@@ -16,7 +16,6 @@
 </script>
 
 <!-- markup (zero or more items) goes here -->
-
 {#await fetcher}
 	<p></p>
 {:then films} 

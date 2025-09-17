@@ -10,7 +10,7 @@
 <!-- markup (zero or more items) goes here -->
 <div class="navigation">
 	<div class="navigation-body">
-		<a href="/" class="navigation-item">Home</a>
+		<a href="/" class="navigation-item">H</a>
 	</div>
 </div>
 

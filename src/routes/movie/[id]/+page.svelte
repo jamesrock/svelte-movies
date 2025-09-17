@@ -14,10 +14,11 @@
 	const fetcher = getFilm(id);
   // console.log(data);
 </script>
+
 <main>
   {#await fetcher}
-	  <p>waiting</p>
-  {:then film} 
+	  <p></p>
+  {:then film}
     <div class="film">
       <div class="film-head">
         <div class="film-head-top">

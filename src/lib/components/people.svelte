@@ -11,7 +11,6 @@
 </script>
 
 <!-- markup (zero or more items) goes here -->
-
 <div class="category">
 	<div class="category-head">
 		<h2>{name}</h2>
