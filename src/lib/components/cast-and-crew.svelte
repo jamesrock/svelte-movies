@@ -19,9 +19,11 @@
 
 {#await fetcher}
 	<p>waiting</p>
-{:then people} 
-	<People people={dedupe(people.cast, 'cast')} name="Cast" type="cast" />
-	<People people={dedupe(sortByPriority(people.crew, 'job'), 'crew')} name="Crew" type="crew" />
+{:then people}
+	<div class="cast-and-crew">
+		<People people={dedupe(people.cast, 'cast')} name="Cast" type="cast" />
+		<People people={dedupe(sortByPriority(people.crew, 'job'), 'crew')} name="Crew" type="crew" />
+	</div>
 {:catch error} 
 	<p>{error.message}</p>
 {/await}

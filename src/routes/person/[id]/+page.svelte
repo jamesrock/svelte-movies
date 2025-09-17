@@ -1,6 +1,7 @@
 <script>
   import Poster from '$lib/components/poster.svelte';
   import Filmography from '$lib/components/filmography.svelte';
+  import { api } from '$lib/api.js';
   async function getPerson(id) {
 		const fetch = await api.getPerson(id);
 		return fetch;
