@@ -12,7 +12,6 @@
   let query = $state('');
   const cache = {};
   const runSearch = () => {
-    console.log('runSearch', query, cache);
     if(query.length === 0) {
       clearSearch();
       return;
