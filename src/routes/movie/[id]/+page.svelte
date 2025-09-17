@@ -3,27 +3,19 @@
   import Recommendations from "$lib/components/recommendations.svelte";
   import Poster from "$lib/components/poster.svelte";
   import Genres from "$lib/components/genres.svelte";
-  import { api, toTime, getRatingClass, floorRating } from "$lib/api";
-
-  async function getFilm(id) {
-		const fetch = await api.getFilm(id);
-		return fetch;
-	};
+  import { toTime, getRatingClass, floorRating } from "$lib/api";
 	const { data } = $props();
-  const { id } = data;
-	const fetcher = getFilm(id);
+  const film = $derived(data.film);
 </script>
 
 <main>
-  {#await fetcher}
-	  <p></p>
-  {:then film}
+  {#key film.id}
     <div class="film">
       <div class="film-head">
         <div class="film-head-top">
           <h1>{film.title}</h1>
           <div class="duration">{toTime(film.runtime)}</div>
-          <Genres genres={film?.genres} />
+          <Genres genres={film.genres} />
         </div>
         <div class="film-head-bottom">
           <div class={`rating ${getRatingClass(film.vote_average ?? 0)}`}>{floorRating(film.vote_average)}</div>
@@ -34,7 +26,5 @@
       <CastAndCrew id={film.id} />
       <Recommendations id={film.id} />
     </div>
-  {:catch error} 
-    <p>{error.message}</p>
-  {/await}
+  {/key}
 </main>

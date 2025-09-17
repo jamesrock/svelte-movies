@@ -275,6 +275,9 @@ export const api = {
   getFilm: async function(id) {
     return fetch(`${this.base}/movie/${id}`, this.fetch_options).then(response => response.json());
   },
+  getFilmPath: function(id) {
+    return `${this.base}/movie/${id}`;
+  },
   getPerson: async function(id) {
     return fetch(`${this.base}/person/${id}`, this.fetch_options).then(response => response.json());
   },

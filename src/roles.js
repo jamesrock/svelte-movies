@@ -990,6 +990,7 @@ const roles = [
   'Director of Communications',
   'Tattoo Designer',
   'First Assistant Art Direction',
+  'Opening Title Sequence',
   'Concept Artist',
   'Orchestrator',
   'Script Researcher',
