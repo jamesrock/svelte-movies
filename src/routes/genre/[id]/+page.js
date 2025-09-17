@@ -3,4 +3,3 @@ export function load({ params }) {
 		id: params.id
 	};
 }
-

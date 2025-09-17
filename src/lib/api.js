@@ -281,6 +281,9 @@ export const api = {
   getPerson: async function(id) {
     return fetch(`${this.base}/person/${id}`, this.fetch_options).then(response => response.json());
   },
+  getPersonPath: function(id) {
+    return `${this.base}/person/${id}`;
+  },
   search: async function(query) {
     return Promise.all([
       fetch(`${this.base}/search/movie?query=${query}`, this.fetch_options), 
