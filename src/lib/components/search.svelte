@@ -5,41 +5,40 @@
 
 <script>
 	// instance-level logic goes here
-	import { api, genres, addProp, sortByProp, filterByMatch, media_type_name, media_type_profile_path } from "$lib/api";
+	import { api, genres, addProp, sortByProp, filterByMatch, media_type_name, media_type_profile_path, largest_size_map } from "$lib/api";
 	import Poster from "./poster.svelte";
-	// const [list, setList] = useState([]);
-  // const [query, setQuery] = useState('');
-  const runSearch = (q) => {
-    setQuery(q);
-    if(q.length === 0) {
+  
+  let items = $state([]);
+  let query = $state('');
+  const cache = {};
+  const runSearch = () => {
+    console.log('runSearch', query, cache);
+    if(query.length === 0) {
       clearSearch();
       return;
     };
-    if(cache[q]) {
-      setList(cache[q]);
+    if(cache[query]) {
+      items = cache[query];
       return;
     };
-    api.search(q).then(data => {
-      cache[q] = sortByProp(filterByMatch([...addProp(data[0].results, 'media_type', 'movie'), ...addProp(data[1].results, 'media_type', 'person')], q), 'popularity');
-      setList(cache[q]);
-      // console.log('combined', cache[q]);
+    api.search(query).then(data => {
+      cache[query] = sortByProp(filterByMatch([...addProp(data[0].results, 'media_type', 'movie'), ...addProp(data[1].results, 'media_type', 'person')], query), 'popularity');
+      items = cache[query];
     }).catch(error => console.log('Error:', error));
   };
   const clearSearch = () => {
-    setQuery('');
-    setList([]);
+    query = '';
+    items = [];
   };
-  const items = [];
-  const query = "";
 </script>
 
 <!-- markup (zero or more items) goes here -->
 <div class="search">
 	<div class="search-body">
-		<input type="search" placeholder="Search film, actor, director" value={query} />
+		<input type="search" placeholder="Search film, actor, director" bind:value={query} oninput={() => runSearch()} />
 		<div class="search-results">
 			{#each items as item}
-				<a href={`/${item.media_type}/${item.id}`} class="search-results-item" onClick={clearSearch}>
+				<a href={`/${item.media_type}/${item.id}`} class="search-results-item" onclick={clearSearch}>
 					<div class="poster-wrap">
 						<Poster path={item[media_type_profile_path[item.media_type]]} size={largest_size_map[item.media_type]} />
 					</div>

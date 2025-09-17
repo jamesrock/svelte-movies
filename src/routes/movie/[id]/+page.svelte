@@ -12,7 +12,6 @@
 	const { data } = $props();
   const { id } = data;
 	const fetcher = getFilm(id);
-  // console.log(data);
 </script>
 
 <main>

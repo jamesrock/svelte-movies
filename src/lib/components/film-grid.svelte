@@ -5,22 +5,24 @@
 
 <script>
 	// instance-level logic goes here
-	import { api, genres, largest_size_map } from "$lib/api";
+	import { api, genres, dedupeFilms, largest_size_map } from "$lib/api";
+	import { onMount } from "svelte";
 	import Poster from "./poster.svelte";
-	const { id, tyoe = 'genre', name = 'name', sub = false } = $props();
-	const films = [];
-	const page = 0;
-	const pages = 0;
-	// const fetcher = getFilms(id);
+	
+	const { id, type = 'genre', name = 'name', sub = false } = $props();
+	let films = $state([]);
+	let page = $state(0);
+	let pages = $state(0);
 	const loadMore = (target) => {
-    // console.log('loadMore', target);
     api.getFilms(type, target, id).then(data => {
-      // setFilms(dedupeFilms([...films, ...data.results]));
-      // setPages(data.total_pages);
-      // setPage(target);
-      // console.log(data);
+      films = dedupeFilms([...films, ...data.results]);
+      pages = data.total_pages;
+      page = target;
     }).catch(error => console.log('Error:', error));
   };
+	onMount(() => {
+		loadMore(1);
+	});
 </script>
 
 <!-- markup (zero or more items) goes here -->
@@ -41,7 +43,7 @@
 	</div>
 	{#if page<pages}
 		<div class="films-foot">
-			<button onClick={() => loadMore(page + 1)}>Load more</button>
+			<button onclick={() => loadMore(page + 1)}>Load more</button>
 		</div>
 	{/if}
 </div>
