@@ -5,7 +5,7 @@
 
 <script>
 	// instance-level logic goes here
-	import { api, genres, dedupeFilms, largest_size_map } from "$lib/api";
+	import { api, dedupeFilms, largest_size_map } from "$lib/api";
 	import { onMount } from "svelte";
 	import Poster from "./poster.svelte";
 	
