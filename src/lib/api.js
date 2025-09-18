@@ -272,6 +272,9 @@ export const api = {
   getGenres: async function() {
     return fetch(`${this.base}/genre/movie/list`, this.fetch_options).then(response => response.json());
   },
+  getGenresPath: function() {
+    return `${this.base}/genre/movie/list`;
+  },
   getFilm: async function(id) {
     return fetch(`${this.base}/movie/${id}`, this.fetch_options).then(response => response.json());
   },
