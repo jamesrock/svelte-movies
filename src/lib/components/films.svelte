@@ -1,16 +1,9 @@
-<script module>
-	// module-level logic goes here
-	// (you will rarely use this)
-</script>
-
 <script>
-	// instance-level logic goes here
 	import { getRole, largest_size_map } from "$lib/api";
 	import Poster from "./poster.svelte";
 	const { films, link, credits, name } = $props();
 </script>
 
-<!-- markup (zero or more items) goes here -->
 {#if films.length}
 	<div class="category">
 		<div class="category-head">
@@ -30,7 +23,3 @@
 		</div>
 	</div>
 {/if}
-
-<style>
-	/* styles go here */
-</style>
