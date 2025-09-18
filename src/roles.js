@@ -1013,4 +1013,6 @@ const roles = [
   'Thanks',
 ];
 
+console.log(`role count: ${roles.length}`);
+
 export default roles;
