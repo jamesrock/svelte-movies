@@ -1,4 +1,4 @@
-import roles from '../roles';
+import roles from './roles';
 
 export const getRatingClass = (rating) => {
   if(rating===0) {return ''};
