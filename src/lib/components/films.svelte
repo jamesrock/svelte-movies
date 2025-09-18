@@ -11,7 +11,7 @@
 </script>
 
 <!-- markup (zero or more items) goes here -->
-{#if films.length }
+{#if films.length}
 	<div class="category">
 		<div class="category-head">
 			<h2>{name}</h2>
