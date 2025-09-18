@@ -5,7 +5,7 @@
 
 <script>
 	// instance-level logic goes here
-	import { api, genres, addProp, sortByProp, filterByMatch, media_type_name, media_type_profile_path, largest_size_map } from "$lib/api";
+	import { api, addProp, sortByProp, filterByMatch, media_type_name, media_type_profile_path, largest_size_map } from "$lib/api";
 	import Poster from "./poster.svelte";
   
   let items = $state([]);
