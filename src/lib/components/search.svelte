@@ -1,12 +1,6 @@
-<script module>
-	// module-level logic goes here
-	// (you will rarely use this)
-</script>
-
 <script>
-	// instance-level logic goes here
 	import { api, addProp, sortByProp, filterByMatch, media_type_name, media_type_profile_path, largest_size_map } from "$lib/api";
-	import Poster from "./poster.svelte";
+  import { Poster } from "$lib/components";
   
   let items = $state([]);
   let query = $state('');
@@ -31,7 +25,6 @@
   };
 </script>
 
-<!-- markup (zero or more items) goes here -->
 <div class="search">
 	<div class="search-body">
 		<input type="search" placeholder="Search film, actor, director" bind:value={query} oninput={() => runSearch()} />
@@ -47,7 +40,3 @@
 		</div>
 	</div>
 </div>
-
-<style>
-	/* styles go here */
-</style>

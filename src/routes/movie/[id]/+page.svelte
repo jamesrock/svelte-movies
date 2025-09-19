@@ -1,8 +1,5 @@
 <script>
-  import CastAndCrew from "$lib/components/cast-and-crew.svelte";
-  import Recommendations from "$lib/components/recommendations.svelte";
-  import Poster from "$lib/components/poster.svelte";
-  import Genres from "$lib/components/genres.svelte";
+  import { CastAndCrew, Recommendations, Poster, Genres } from "$lib/components";
   import { toTime, getRatingClass, floorRating } from "$lib/api";
 	const { data } = $props();
   const film = $derived(data.film);

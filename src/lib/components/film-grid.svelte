@@ -1,13 +1,7 @@
-<script module>
-	// module-level logic goes here
-	// (you will rarely use this)
-</script>
-
 <script>
-	// instance-level logic goes here
 	import { api, dedupeFilms, largest_size_map } from "$lib/api";
 	import { onMount } from "svelte";
-	import Poster from "./poster.svelte";
+	import { Poster } from "$lib/components";
 	
 	const { id, type = 'genre', name = 'name', sub = false } = $props();
 	let films = $state([]);
@@ -25,7 +19,6 @@
 	});
 </script>
 
-<!-- markup (zero or more items) goes here -->
 <div class="films">
 	<div class="films-head">
 		<h1>{name}</h1>
@@ -47,7 +40,3 @@
 		</div>
 	{/if}
 </div>
-
-<style>
-	/* styles go here */
-</style>

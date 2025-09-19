@@ -1,5 +1,5 @@
 <script>
-	import FilmGrid from "$lib/components/film-grid.svelte";
+	import { FilmGrid } from "$lib/components";
 	import { genres } from "$lib/api";
 	const { data } = $props();
 	const { id } = data;

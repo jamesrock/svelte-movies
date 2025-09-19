@@ -1,12 +1,6 @@
-<script module>
-	// module-level logic goes here
-	// (you will rarely use this)
-</script>
-
 <script>
-	// instance-level logic goes here
 	import { api, genres, dedupe, sortByPriority } from "$lib/api";
-	import People from "./people.svelte";
+	import { People } from "$lib/components";
 	async function getCredits(id) {
 		const fetch = await api.getCredits(id);
 		return fetch;
@@ -15,7 +9,6 @@
 	const fetcher = getCredits(id);
 </script>
 
-<!-- markup (zero or more items) goes here -->
 {#await fetcher}
 	<p></p>
 {:then people}
@@ -26,7 +19,3 @@
 {:catch error} 
 	<p>{error.message}</p>
 {/await}
-
-<style>
-	/* styles go here */
-</style>

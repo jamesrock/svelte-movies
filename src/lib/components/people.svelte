@@ -1,16 +1,9 @@
-<script module>
-	// module-level logic goes here
-	// (you will rarely use this)
-</script>
-
 <script>
-	// instance-level logic goes here
 	import { api, largest_size_map, getRole } from "$lib/api";
-	import Poster from "./poster.svelte";
+	import { Poster } from "$lib/components";
 	const { people, name, type } = $props();
 </script>
 
-<!-- markup (zero or more items) goes here -->
 {#if people.length}
 	<div class="category">
 		<div class="category-head">
@@ -29,7 +22,3 @@
 		</div>
 	</div>
 {/if}
-
-<style>
-	/* styles go here */
-</style>

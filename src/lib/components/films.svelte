@@ -1,6 +1,6 @@
 <script>
 	import { getRole, largest_size_map } from "$lib/api";
-	import Poster from "./poster.svelte";
+	import { Poster } from "$lib/components";
 	const { films, link, credits, name } = $props();
 </script>
 

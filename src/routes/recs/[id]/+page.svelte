@@ -1,5 +1,5 @@
 <script>
-	import FilmGrid from "$lib/components/film-grid.svelte";
+	import { FilmGrid } from "$lib/components";
 	const { data } = $props();
 	const { film } = data;
 </script>

@@ -1,7 +1,5 @@
 <script>
-  import NowPlaying from "$lib/components/now-playing.svelte";
-  import ComingSoon from "$lib/components/coming-soon.svelte";
-  import Category from "$lib/components/category.svelte";
+  import { NowPlaying, ComingSoon, Category } from "$lib/components";
 	let { data } = $props();
 </script>
 <main>
