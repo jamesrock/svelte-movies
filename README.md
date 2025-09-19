@@ -1,34 +1,19 @@
-# sv
+## svelte-movies
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+[svelte-movies.jamesrock.me](https://svelte-movies.jamesrock.me)
 
-## Creating a project
+This repo forms part of a project where I built the same app using Svelte, Nuxt, Next, Solid and Angular — all but one of which I'd never use before — in an effort to show that picking-up frameworks isn't quite the huge deal hiring managers seem to think it is...
 
-If you're seeing this, you've probably already done this step. Congrats!
+The app itself is nothing overly fancy — just a basic film discovery site covering all the essentials one would expect such as search (actor/director/title), categories, filmographies, cast & crew. I took a classic ‘less is more’ approach with regards to the UI. It’s certainly not the most impressive thing you’ll ever see — but it is a perfectly functional single-page app fetching data from a live API, which is very much the bread and butter of modern front-end development.
 
-```sh
+All five repos can be found here on GitHub:
 
-# create a new project in my-app
-npx sv create my-app
-```
+[github.com/svelte-movies](https://github.com/jamesrock/svelte-movies)  
+[github.com/nuxt-movies](https://github.com/jamesrock/nuxt-movies)  
+[github.com/nextjs-movies](https://github.com/jamesrock/nextjs-movies)  
+[github.com/solid-movies](https://github.com/jamesrock/solid-movies)  
+[github.com/angular-movies](https://github.com/jamesrock/angular-movies)  
 
-## Developing
+### Project Summary
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+I love the docs, featuring great tutorials, examples and a particularly nice setup script. It took just over a day to get the app up and running — I found Svelte (actually SvelteKit) a genuine joy to use. I think I might even prefer it to Next, which I really didn’t expect! That said, I found a few key concepts were buried amongst other seemingly irrelevant information within their docs — I’d eventually find answers without having to trawl the web, though it did occasionally take some digging and piecing together. The concept of ‘runes’ (a strange term but there we are!) is great — it’s a significant step forward from the likes of React’s useState, what with them being baked-in as part of the ‘language’. Honestly, Svelte just might be my new go-to, although it may struggle to overtake Next in the mainstream, for its image isn’t quite so ‘impressive’. It’s a sort-of hybrid of Next and Vue, with server-side rendering and file-based routing amongst other features — I really, really like it!
