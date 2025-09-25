@@ -1,6 +1,5 @@
 <script>
   import { NowPlaying, ComingSoon, Category } from "$lib/components";
-	let { data } = $props();
 </script>
 <main>
   <div class="categories">
